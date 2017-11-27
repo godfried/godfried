@@ -1,7 +1,7 @@
 variable "remote_state_bucket" {
   type        = "string"
   description = "Name of the S3 bucket which stores Terraform state"
-  default     = "godfried-de-terraform-state"
+  default     = "godfried-terraform-state"
 }
 
 variable "aws_profile" {
