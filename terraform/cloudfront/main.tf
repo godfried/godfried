@@ -5,8 +5,8 @@ provider "aws" {
 
 resource "aws_cloudfront_distribution" "godfried" {
   origin {
-    domain_name = "godfried.de.s3-website.eu-central-1.amazonaws.com"
-    origin_id   = "S3-Website-godfried.de.s3-website.eu-central-1.amazonaws.com"
+    domain_name = "${data.terraform_remote_state.s3.website_endpoint}"
+    origin_id   = "S3-Website-${data.terraform_remote_state.s3.website_endpoint}"
 
     custom_origin_config {
         http_port = "80"
@@ -21,7 +21,7 @@ resource "aws_cloudfront_distribution" "godfried" {
     compress = "false"
     allowed_methods  = ["HEAD", "GET"]
     cached_methods   = ["HEAD", "GET"]
-    target_origin_id = "S3-Website-godfried.de.s3-website.eu-central-1.amazonaws.com"
+    target_origin_id = "S3-Website-${data.terraform_remote_state.s3.website_endpoint}"
 
     forwarded_values {
       query_string = false
