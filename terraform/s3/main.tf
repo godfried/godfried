@@ -18,20 +18,6 @@ resource "aws_s3_bucket" "godfried-de" {
   }
 }
 
-resource "aws_s3_bucket" "www-godfried-de" {
-  bucket = "www.godfried.de"
-  website {
-    redirect_all_requests_to = "godfried.de"
-  }
-
-  versioning {
-    enabled = true
-  }
-
-  lifecycle {
-    prevent_destroy = true
-  }
-}
 
 resource "aws_s3_bucket_policy" "godfried-de" {
   bucket = "${aws_s3_bucket.godfried-de.id}"
