@@ -41,7 +41,7 @@ resource "aws_cloudfront_distribution" "godfried" {
     }
   }
   viewer_certificate  {
-    iam_certificate_id = "ASCAJ5KEQY4FB5SAZ3346"
+    iam_certificate_id = "ASCAJWDYWXYH6O3YXJ26G"
     minimum_protocol_version = "TLSv1.1_2016"
     ssl_support_method = "sni-only"
   }

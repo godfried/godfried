@@ -4,5 +4,6 @@ data "terraform_remote_state" "s3" {
     bucket = "${var.remote_state_bucket}"
     key = "s3/terraform.tfstate"
     region = "${var.aws_region}"
+    profile = "${var.aws_profile}"
   }
 }
